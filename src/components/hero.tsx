@@ -172,7 +172,7 @@ export default function Hero() {
 
           <motion.div variants={item} className="mt-8 flex gap-4">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/Killuax007"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5, scale: 1.1 }}
@@ -182,7 +182,7 @@ export default function Hero() {
               <FaGithub size={20} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/manoj-kumar-panda-527089272"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5, scale: 1.1 }}
@@ -192,7 +192,7 @@ export default function Hero() {
               <FaLinkedin size={20} />
             </motion.a>
             <motion.a
-              href="https://twitter.com"
+              href="https://x.com/Killuax_007?t=mKKPELafgeTl3NalEvgBZQ&s=09"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -5, scale: 1.1 }}
