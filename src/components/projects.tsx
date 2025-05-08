@@ -26,13 +26,14 @@ const projects = [
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Medium-Clone",
     description:
-      "A collaborative task manager with real-time updates and team features.",
-    image: "/placeholder.svg?height=400&width=600",
+      "A Blog Web-Application inspiried from Medium  Where an user can post blogs , Read Blog from other user Save a blog  , ",
+    image:
+      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746723818/images/rdc8pkkwoicslslxjasi.png",
     tags: ["React", "Firebase", "Framer Motion", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://medium-clone-sigma-five.vercel.app/",
+    githubUrl: "https://github.com/Killuax007/Medium-clone",
   },
   {
     id: 3,
@@ -113,11 +114,12 @@ export default function Projects() {
                 >
                   <div className="relative overflow-hidden p-4  ">
                     <Image
+                      unoptimized
                       height={100}
                       width={100}
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image}
                       alt={project.title}
-                      className="w-full h-40 object-contain  transition-transform duration-500 ease-in-out"
+                      className="w-full h-40 object-cover  transition-transform duration-300 ease-in-out"
                       style={{
                         transform:
                           hoveredId === project.id ? "scale(1.05)" : "scale(1)",
@@ -133,24 +135,24 @@ export default function Projects() {
                     >
                       <div className="flex gap-4">
                         <Button size="sm" variant="secondary" asChild>
-                          <a
+                          <Link
                             href={project.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Live Demo
-                          </a>
+                          </Link>
                         </Button>
                         <Button size="sm" variant="outline" asChild>
-                          <a
+                          <Link
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <FaGithub className="mr-2 h-4 w-4" />
                             Code
-                          </a>
+                          </Link>
                         </Button>
                       </div>
                     </motion.div>

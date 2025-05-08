@@ -44,11 +44,15 @@ export default function About() {
             variants={fadeInUp}
             className="mb-4 text-3xl font-bold md:text-4xl"
           >
-            About Me
+            About{" "}
+            <span className="mb-4 text-3xl font-bold md:text-4xl text-teal-400">
+              {" "}
+              Me
+            </span>
           </motion.h2>
           <motion.div
             variants={fadeInUp}
-            className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500"
+            className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
           />
           <motion.p variants={fadeInUp} className="text-gray-200">
             I’m a dedicated developer with a strong focus on building responsive
@@ -78,13 +82,17 @@ export default function About() {
             >
               Education
             </motion.h2>
+            <motion.div
+              variants={fadeInUp}
+              className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
+            />
             <div className="">
-              <MagicCard className="rounded-2xl ">
+              <MagicCard gradientSize={100} className="rounded-2xl ">
                 <div className="flex p-2 ">
                   <Image
                     width={100}
                     height={100}
-                    className="rounded-full size-15 object-cover"
+                    className="rounded-full size-15 object-cover md:my-0 my-2 "
                     alt="college"
                     src={
                       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746669009/images/qi7lgrassf5fulyimbwz.jpg"
@@ -108,7 +116,7 @@ export default function About() {
                     <div>
                       <motion.p
                         variants={fadeInUp}
-                        className="text-white text-[10px] md:text-sm    my-2 md:my-1"
+                        className="text-white text-[10px] md:text-sm  my-2 w-15 md:w-full md:my-1"
                       >
                         2021 - 2024
                       </motion.p>
@@ -125,8 +133,12 @@ export default function About() {
             >
               Experience
             </motion.h2>
+            <motion.div
+              variants={fadeInUp}
+              className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
+            />
             <div className="">
-              <MagicCard className=" rounded-2xl ">
+              <MagicCard className=" rounded-2xl " gradientSize={100}>
                 <div className="flex p-2 ">
                   <Image
                     width={100}

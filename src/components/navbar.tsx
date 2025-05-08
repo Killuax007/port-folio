@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Home, User, Briefcase, Mail, Code2Icon } from "lucide-react";
 import Link from "next/link";
-import { Separator } from "@radix-ui/react-separator";
-import { ModeToggle } from "./mode-toggle";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const { scrollY } = useScroll();
@@ -43,7 +46,7 @@ export default function Navbar() {
   const navItems = [
     { id: "home", icon: Home, label: "Home" },
     { id: "about", icon: User, label: "About" },
-    { id: "projects", icon: Briefcase, label: "ProjectsX" },
+    { id: "projects", icon: Briefcase, label: "Projects" },
     { id: "skills", icon: Code2Icon, label: "Skills" },
     { id: "contact", icon: Mail, label: "Contact" },
   ];
@@ -84,7 +87,18 @@ export default function Navbar() {
                   : "text-gray-400 hover:text-white  "
               }`}
             >
-              <item.icon size={20} />
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    {" "}
+                    <item.icon size={20} />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{item.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
               {activeSection === item.id && (
                 <motion.div
                   layoutId="activeSection"
@@ -96,8 +110,6 @@ export default function Navbar() {
           </Link>
         ))}
       </motion.div>
-
-      <Separator className="my-2" />
     </motion.nav>
   );
 }
