@@ -2,20 +2,27 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { MagicCard } from "./magicui/magic-card";
+import Link from "next/link";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Whisperly",
     description:
-      "A full-featured online store with cart, checkout, and payment processing.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Tailwind CSS", "Stripe", "Supabase"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Whisperly is an anonymous social messaging platform built with Next.js. It allows users to send and receive open-ended, AI-generated messages without revealing their identity. Ideal for curious minds, fun prompts, and social interaction — safely and securely.",
+    image:
+      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746674812/images/ai7cy5o7ie14kb75exm7.png",
+    tags: ["Next.js", "Tailwind CSS", "Mongodb", "Nodemailer", "Gemini"],
+    liveUrl: "https://whissperly.vercel.app/",
+    githubUrl: "https://github.com/Killuax007/whissperly",
   },
   {
     id: 2,
@@ -34,7 +41,7 @@ const projects = [
       "An analytics dashboard for tracking financial data with interactive charts.",
     image: "/placeholder.svg?height=400&width=600",
     tags: ["Next.js", "D3.js", "Tailwind CSS", "API Integration"],
-    liveUrl: "#",
+    liveUrl: "",
     githubUrl: "#",
   },
   {
@@ -69,19 +76,15 @@ export default function Projects() {
           }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto mb-16 text-center"
+          className="max-w-2xl mx-auto mb-16 text-center"
         >
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
             My <span className="text-teal-400">Projects</span>
           </h2>
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500" />
-          <p className="text-gray-400">
-            Here are some of my recent projects. Each one was built with a focus
-            on solving real problems with elegant solutions.
-          </p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className=" flex flex-wrap justify-center   gap-8 ">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -100,64 +103,78 @@ export default function Projects() {
               transition={{ duration: 0.6 }}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className="overflow-hidden rounded-xl bg-gray-800 border border-gray-700"
+              className="overflow-hidden rounded-xl w-[300px]  border border-gray-700"
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 ease-in-out"
-                  style={{
-                    transform:
-                      hoveredId === project.id ? "scale(1.05)" : "scale(1)",
-                    transition: "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
-                  }}
-                />
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 bg-teal-900/70 flex items-center justify-center"
+              <Link href={project.githubUrl}>
+                <MagicCard
+                  gradientFrom="#10b981"
+                  gradientTo="#FE8FB5"
+                  gradientSize={100}
                 >
-                  <div className="flex gap-4">
-                    <Button size="sm" variant="secondary" asChild>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="outline" asChild>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </a>
-                    </Button>
-                  </div>
-                </motion.div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                <p className="mb-4 text-gray-400">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="bg-gray-700 hover:bg-gray-600"
+                  <div className="relative overflow-hidden p-4  ">
+                    <Image
+                      height={100}
+                      width={100}
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-40 object-contain  transition-transform duration-500 ease-in-out"
+                      style={{
+                        transform:
+                          hoveredId === project.id ? "scale(1.05)" : "scale(1)",
+                        transition:
+                          "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                      }}
+                    />
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0  flex items-center justify-center"
                     >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+                      <div className="flex gap-4">
+                        <Button size="sm" variant="secondary" asChild>
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                          </a>
+                        </Button>
+                        <Button size="sm" variant="outline" asChild>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaGithub className="mr-2 h-4 w-4" />
+                            Code
+                          </a>
+                        </Button>
+                      </div>
+                    </motion.div>
+                  </div>
+                  <div className="  p-4">
+                    <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
+                    <p className="mb-4 max-w-[400px] text-gray-400 text-wrap">
+                      {project.description.split(" ").slice(0, 15).join(" ") +
+                        "..."}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className="font-normal hover:bg-white hover:text-black"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </MagicCard>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -167,23 +184,17 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 text-center"
+          className="flex justify-center mt-12 text-center  "
         >
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-teal-600 text-teal-400 hover:bg-teal-600/10"
-            asChild
-          >
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="mr-2 h-5 w-5" />
-              View More on GitHub
-            </a>
-          </Button>
+          <Link href={"https://github.com/Killuax007?tab=repositories"}>
+            <ShimmerButton className="shadow-2xl hover:bg-emerald-400 tranasation-all delay-300">
+              <span className="flex whitespace-pre-wrap  text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                <FaGithub className="mr-1 size-3 md:size-4 " />
+                View More on GitHub
+                <IoIosArrowRoundForward className="ml-1 size-3 md:size-4 " />
+              </span>
+            </ShimmerButton>
+          </Link>
         </motion.div>
       </div>
     </section>

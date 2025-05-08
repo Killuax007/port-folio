@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MagicCard } from "./magicui/magic-card";
 import Image from "next/image";
+import Link from "next/link";
 export default function About() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -52,8 +53,12 @@ export default function About() {
           <motion.p variants={fadeInUp} className="text-gray-200">
             I’m a dedicated developer with a strong focus on building responsive
             websites and scalable backend systems. I’ve completed a Java
-            internship at <span className="font-semibold">@Tutor Mentor</span> ,
-            where I deepened my backend skills. I don’t claim to be a
+            internship at{" "}
+            <Link href={"https://tutormentor.co.in/index.php"}>
+              {" "}
+              <span className="font-semibold">@Tutor Mentor</span>
+            </Link>{" "}
+            , where I deepened my backend skills. I don’t claim to be a
             perfectionist—but I’m driven by the desire to improve constantly and
             deliver high-quality, reliable solutions that make a real impact.
           </motion.p>
