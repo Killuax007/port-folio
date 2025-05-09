@@ -117,7 +117,7 @@ export default function Hero() {
                 <motion.span
                   key={index}
                   variants={letterVariants}
-                  className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                  className="bg-linear-to-r from-yellow-200 via-amber-400 to-orange-600  bg-clip-text text-transparent"
                 >
                   {char === " " ? "\u00A0" : char}
                 </motion.span>

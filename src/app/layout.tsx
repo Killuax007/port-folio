@@ -14,8 +14,8 @@ const ovo = Ovo({
 });
 
 export const metadata: Metadata = {
-  title: "Port-Folio",
-  description: "A Port-folio app to showcase",
+  title: "Manoj's Port-Folio",
+  description: "Showcasing my skills and what I can build",
 };
 
 export default function RootLayout({
