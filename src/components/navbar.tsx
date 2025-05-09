@@ -10,6 +10,10 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import SessionTimer from "./session-time";
+import { FaFilePdf } from "react-icons/fa6";
+import { FaRegFilePdf } from "react-icons/fa";
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const { scrollY } = useScroll();
@@ -64,7 +68,7 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex items-center justify-center space-x-4 "
+        className="flex items-center justify-center space-x-2 md:space-x-4 "
       >
         {navItems.map((item) => (
           <Link
@@ -81,7 +85,7 @@ export default function Navbar() {
             <motion.div
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+              className={`flex h-10 w-10 items-center justify-center rounded-full cursor-pointer transition-colors ${
                 activeSection === item.id
                   ? ` text-amber-400  `
                   : "text-gray-400 hover:text-white  "
@@ -90,8 +94,7 @@ export default function Navbar() {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    {" "}
-                    <item.icon size={20} />
+                    <item.icon size={20} className="cursor-pointer" />
                   </TooltipTrigger>
                   <TooltipContent>
                     <p>{item.label}</p>
@@ -109,6 +112,27 @@ export default function Navbar() {
             </motion.div>
           </Link>
         ))}
+        <Link
+          className="flex items-center"
+          href={
+            "https://drive.google.com/file/d/1rLKokzItJSgfCmL9Afd4_uR0d0OUD-Nj/view?usp=sharing"
+          }
+        >
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <FaRegFilePdf
+                  size={19}
+                  className="cursor-pointer text-gray-400 hover:text-white my-2"
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Resume</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </Link>
+        <SessionTimer />
       </motion.div>
     </motion.nav>
   );

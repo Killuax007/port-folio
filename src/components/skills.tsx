@@ -202,7 +202,7 @@ export default function Skills() {
   const slugs = [
     "typescript",
     "javascript",
-    "java",
+
     "react",
     "Next.js",
     "tailwindcss",
@@ -221,7 +221,10 @@ export default function Skills() {
     "express",
     "nextdotjs",
     "prisma",
-    "amazonaws",
+    "amazonwebservices",
+    "leetcode",
+    "vite",
+    "sqlite",
     "postgresql",
     "mysql",
     "mongodb",
@@ -232,7 +235,7 @@ export default function Skills() {
     "github",
     "gitlab",
     "googlegemini",
-    "visualstudiocode",
+
     "figma",
     "linux",
   ];

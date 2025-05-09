@@ -5,13 +5,19 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { IoIosSend } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { ShimmerButton } from "./magicui/shimmer-button";
 import { AuroraText } from "./magicui/aurora-text";
+import { Loader2 } from "lucide-react";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,29 +35,32 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("/api/send-response", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    console.log(res);
-
-    if (res.ok) {
-      toast.success("Message sent ✅", {
-        description: "Thanks for reaching out. I'll get back to you soon.",
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/send-response", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } else {
+      if (res.ok) {
+        toast.success("Message sent ✅", {
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
       toast.error("Failed to sent ");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
 
   const fadeInUp = {
@@ -125,7 +134,7 @@ export default function Contact() {
             You got response quickly :)
           </p>
         </motion.div>
-        <AuroraText className="flex justify-center w-full my-4 text-center text-lg">
+        <AuroraText className="flex justify-center w-full my-4 text-center text-2xl">
           Let&apos;s connect
         </AuroraText>
 
@@ -141,7 +150,19 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 className="transition-colors text-gray-300  "
               >
-                <item.icon size={20} className={`${item.color}`} />
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <item.icon
+                        size={20}
+                        className={`${item.color}  cursor-pointer`}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{item.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </motion.a>
             );
           })}
@@ -222,25 +243,7 @@ export default function Contact() {
                 <span className="flex whitespace-pre-wrap  text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                   {isSubmitting ? (
                     <span className="flex items-center">
-                      <svg
-                        className="w-5 h-5 mr-2 animate-spin"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                          fill="none"
-                        />
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        />
-                      </svg>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                       Sending...
                     </span>
                   ) : (

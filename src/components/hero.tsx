@@ -89,7 +89,7 @@ export default function Hero() {
           <motion.div variants={item} className="my-10 overflow-hidden  p-1">
             <div className="h-32 w-32 overflow-hidden rounded-full bg-gray-800 md:h-40 md:w-40">
               <Image
-                src="https://res.cloudinary.com/dwajmx8y7/image/upload/v1714435690/samples/people/smiling-man.jpg"
+                src="https://res.cloudinary.com/dwajmx8y7/image/upload/v1743687615/images/jzb1lywnzj2n1zqnvtti.jpg"
                 alt="Profile"
                 width={100}
                 height={100}

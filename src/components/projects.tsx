@@ -28,32 +28,41 @@ const projects = [
     id: 2,
     title: "Medium-Clone",
     description:
-      "A Blog Web-Application inspiried from Medium  Where an user can post blogs , Read Blog from other user Save a blog  , ",
+      "A  Web-Application inspiried from Medium  Where an user can post blogs , Read Blog from other user Save a blog  , ",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746723818/images/rdc8pkkwoicslslxjasi.png",
-    tags: ["React", "Firebase", "Framer Motion", "TypeScript"],
+    tags: ["React", "Tailwind CSS", "Node Js", "PostgreSQL", "Prisma"],
     liveUrl: "https://medium-clone-sigma-five.vercel.app/",
     githubUrl: "https://github.com/Killuax007/Medium-clone",
   },
   {
     id: 3,
-    title: "Finance Dashboard",
+    title: "Urban-Bites",
     description:
-      "An analytics dashboard for tracking financial data with interactive charts.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "D3.js", "Tailwind CSS", "API Integration"],
-    liveUrl: "",
-    githubUrl: "#",
+      "Urban Bites delivers fresh, delicious meals fast. Order online, track your food in real-time, and enjoy a seamless dining experience.",
+    image:
+      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746758492/images/bmdpybrradlu412yr82l.png",
+    tags: [
+      "React.js",
+      "Tailwind CSS",
+      "Context API",
+      "Node.js",
+      "Nodemailer",
+      "Mongodb",
+    ],
+    liveUrl: "https://github.com/Killuax007/Urban-Bites",
+    githubUrl: "https://github.com/Killuax007/Urban-Bites",
   },
   {
     id: 4,
-    title: "Social Media Platform",
+    title: "Employee-Management",
     description:
-      "A community platform with profiles, posts, and real-time messaging.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
+      "An Employee Management site , where stored a Basic info details of an Employee like Name , Email , Salary , to manage ",
+    image:
+      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746759012/images/fgxwiifzoilctbqzlqsb.png",
+    tags: ["React", "Tailwindcss", "Spring-Boot", "MongoDB"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Killuax007/Employee-Management-",
   },
 ];
 
@@ -106,77 +115,75 @@ export default function Projects() {
               onMouseLeave={() => setHoveredId(null)}
               className="overflow-hidden rounded-xl w-[300px]  border border-gray-700"
             >
-              <Link href={project.githubUrl}>
-                <MagicCard
-                  gradientFrom="#10b981"
-                  gradientTo="#FE8FB5"
-                  gradientSize={100}
-                >
-                  <div className="relative overflow-hidden p-4  ">
-                    <Image
-                      unoptimized
-                      height={100}
-                      width={100}
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-40 object-cover  transition-transform duration-300 ease-in-out"
-                      style={{
-                        transform:
-                          hoveredId === project.id ? "scale(1.05)" : "scale(1)",
-                        transition:
-                          "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
-                      }}
-                    />
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute inset-0  flex items-center justify-center"
-                    >
-                      <div className="flex gap-4">
-                        <Button size="sm" variant="secondary" asChild>
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            Live Demo
-                          </Link>
-                        </Button>
-                        <Button size="sm" variant="outline" asChild>
-                          <Link
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <FaGithub className="mr-2 h-4 w-4" />
-                            Code
-                          </Link>
-                        </Button>
-                      </div>
-                    </motion.div>
-                  </div>
-                  <div className="  p-4">
-                    <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                    <p className="mb-4 max-w-[400px] text-gray-400 text-wrap">
-                      {project.description.split(" ").slice(0, 15).join(" ") +
-                        "..."}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge
-                          key={tag}
-                          variant="outline"
-                          className="font-normal hover:bg-white hover:text-black"
+              <MagicCard
+                gradientFrom="#10b981"
+                gradientTo="#FE8FB5"
+                gradientSize={100}
+              >
+                <div className="relative overflow-hidden p-4  ">
+                  <Image
+                    unoptimized
+                    height={100}
+                    width={100}
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-40 object-cover  transition-transform duration-300 ease-in-out"
+                    style={{
+                      transform:
+                        hoveredId === project.id ? "scale(1.05)" : "scale(1)",
+                      transition:
+                        "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                    }}
+                  />
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0  flex items-center justify-center"
+                  >
+                    <div className="flex gap-4">
+                      <Button size="sm" variant="secondary" asChild>
+                        <Link
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          {tag}
-                        </Badge>
-                      ))}
+                          <ExternalLink className="mr-1 h-3 w-3" />
+                          Live Demo
+                        </Link>
+                      </Button>
+                      <Button size="sm" variant="secondary" asChild>
+                        <Link
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaGithub className="mr-1 h-3 w-3" />
+                          Code
+                        </Link>
+                      </Button>
                     </div>
+                  </motion.div>
+                </div>
+                <div className="  p-4">
+                  <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
+                  <p className="mb-4 max-w-[400px] text-gray-400 text-wrap">
+                    {project.description.split(" ").slice(0, 15).join(" ") +
+                      "..."}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="hover:font-bold hover:bg-white hover:text-black"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
-                </MagicCard>
-              </Link>
+                </div>
+              </MagicCard>
             </motion.div>
           ))}
         </div>

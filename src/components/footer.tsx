@@ -5,6 +5,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdMusicNote, MdMusicOff } from "react-icons/md";
 import { useRef, useState } from "react";
+import SessionTimer from "./session-time";
 
 export default function Footer() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -66,7 +67,7 @@ export default function Footer() {
           onClick={togglePlay}
           whileHover={{ rotate: 15, scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
-          className="text-green-600 transition-all grayscale hover:grayscale-0"
+          className="text-gray-400 transition-all grayscale hover:text-white"
           title="Play/Pause Music"
         >
           {isPlaying ? <MdMusicOff size={20} /> : <MdMusicNote size={20} />}
@@ -77,6 +78,9 @@ export default function Footer() {
       </div>
 
       {/* Right: Love Message */}
+      <div>
+        <SessionTimer />
+      </div>
       <div className="text-xs text-gray-400">
         Made with <span className="text-red-500 text-sm">❤️</span>
       </div>
