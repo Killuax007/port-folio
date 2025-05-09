@@ -8,6 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -139,17 +140,22 @@ export default function Hero() {
             variants={item}
             className="flex flex-wrap justify-center gap-4"
           >
-            <Button className="rounded-xl p-5 text-base">
-              <span className="flex font-semibold mr-1">Book a call </span>
-              <motion.span
-                whileHover={{ rotate: 15, x: 4 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="inline-block"
-              >
-                <CalendarDaysIcon size={20} />
-              </motion.span>
-            </Button>
-            <Button variant={"outline"} className="rounded-xl p-5 text-base">
+            <Link href={"#contact"}>
+              <Button className="rounded-xl p-5 text-base cursor-pointer">
+                <span className="flex font-semibold mr-1">Book a call </span>
+                <motion.span
+                  whileHover={{ rotate: 15, x: 4 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  className="inline-block"
+                >
+                  <CalendarDaysIcon size={20} />
+                </motion.span>
+              </Button>
+            </Link>
+            <Button
+              variant={"outline"}
+              className="rounded-xl p-5 text-base cursor-pointer"
+            >
               <div className="relative h-2 w-2">
                 {/* Static green dot */}
                 <span className="absolute inset-0 rounded-full bg-green-500" />
