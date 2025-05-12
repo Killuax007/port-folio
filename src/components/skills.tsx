@@ -27,7 +27,6 @@ import { SiPrisma } from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { Badge } from "./ui/badge";
-import { IconCloud } from "./magicui/icon-cloud";
 import { IoLogoFirebase } from "react-icons/io5";
 import { RiSupabaseFill } from "react-icons/ri";
 import { FcLinux } from "react-icons/fc";
@@ -199,49 +198,7 @@ export default function Skills() {
       },
     },
   };
-  const slugs = [
-    "typescript",
-    "javascript",
 
-    "react",
-    "Next.js",
-    "tailwindcss",
-    "html5",
-    "css3",
-    "bootstrap",
-    "firebase",
-    "supabase",
-    "redux",
-    "framer",
-    "django",
-    "springboot",
-    "netlify",
-    "cloudflare",
-    "nodedotjs",
-    "express",
-    "nextdotjs",
-    "prisma",
-    "amazonwebservices",
-    "leetcode",
-    "vite",
-    "sqlite",
-    "postgresql",
-    "mysql",
-    "mongodb",
-    "nginx",
-    "vercel",
-    "docker",
-    "git",
-    "github",
-    "gitlab",
-    "googlegemini",
-
-    "figma",
-    "linux",
-  ];
-  const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}?viewbox=auto&size=40`
-  );
   return (
     <section id="skills" className="py-20 ">
       <div className="container px-4 mx-auto">
@@ -296,9 +253,6 @@ export default function Skills() {
             ))}
           </div>
         </motion.div>
-        <div className="relative flex size-full h-auto mx-auto max-w-lg items-center justify-center overflow-hidden rounded-lg ">
-          <IconCloud images={images} />
-        </div>
       </div>
     </section>
   );
