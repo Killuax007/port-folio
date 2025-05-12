@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+
 import { MagicCard } from "./magicui/magic-card";
 import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -17,7 +16,7 @@ const projects = [
     id: 1,
     title: "Whisperly",
     description:
-      "Whisperly is an anonymous social messaging platform built with Next.js. It allows users to send and receive open-ended, AI-generated messages without revealing their identity. Ideal for curious minds, fun prompts, and social interaction — safely and securely.",
+      "Whisperly is an anonymous social messaging app built with Next.js, enabling users to exchange AI-generated messages securely, fostering curiosity, fun, and open interaction.",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746674812/images/ai7cy5o7ie14kb75exm7.png",
     tags: ["Next.js", "Tailwind CSS", "Mongodb", "Nodemailer", "Gemini"],
@@ -28,7 +27,7 @@ const projects = [
     id: 2,
     title: "Medium-Clone",
     description:
-      "A  Web-Application inspiried from Medium  Where an user can post blogs , Read Blog from other user Save a blog  , ",
+      "A Medium-style web app for publishing and reading articles, featuring rich text editing, user authentication, responsive design, and seamless content management for writers.",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746723818/images/rdc8pkkwoicslslxjasi.png",
     tags: ["React", "Tailwind CSS", "Node Js", "PostgreSQL", "Prisma"],
@@ -57,7 +56,7 @@ const projects = [
     id: 4,
     title: "Employee-Management",
     description:
-      "An Employee Management site , where stored a Basic info details of an Employee like Name , Email , Salary , to manage ",
+      "A simple Spring Boot web application to manage employee records with CRUD operations, RESTful APIs, and integrated database support for efficient data handling.",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746759012/images/fgxwiifzoilctbqzlqsb.png",
     tags: ["React", "Tailwindcss", "Spring-Boot", "MongoDB"],
@@ -94,7 +93,7 @@ export default function Projects() {
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500" />
         </motion.div>
 
-        <div className=" flex flex-wrap justify-center   gap-8 ">
+        <div className=" flex flex-col items-center justify-center cursor-pointer   gap-8 ">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -113,64 +112,28 @@ export default function Projects() {
               transition={{ duration: 0.6 }}
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className="overflow-hidden rounded-xl w-[300px]  border border-gray-700"
+              className="overflow-hidden rounded-xl w-full max-w-xl  border border-gray-700"
             >
               <MagicCard
                 gradientFrom="#10b981"
                 gradientTo="#FE8FB5"
                 gradientSize={100}
               >
-                <div className="relative overflow-hidden p-4  ">
-                  <Image
-                    unoptimized
-                    height={100}
-                    width={100}
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-40 object-cover  transition-transform duration-300 ease-in-out"
-                    style={{
-                      transform:
-                        hoveredId === project.id ? "scale(1.05)" : "scale(1)",
-                      transition:
-                        "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
-                    }}
-                  />
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="absolute inset-0  flex items-center justify-center"
-                  >
-                    <div className="flex gap-4">
-                      <Button size="sm" variant="secondary" asChild>
-                        <Link
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="mr-1 h-3 w-3" />
-                          Live Demo
-                        </Link>
-                      </Button>
-                      <Button size="sm" variant="secondary" asChild>
-                        <Link
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaGithub className="mr-1 h-3 w-3" />
-                          Code
-                        </Link>
-                      </Button>
-                    </div>
-                  </motion.div>
-                </div>
-                <div className="  p-4">
-                  <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                  <p className="mb-4 max-w-[400px] text-gray-400 text-wrap">
-                    {project.description.split(" ").slice(0, 15).join(" ") +
-                      "..."}
+                <div className=" p-4">
+                  <h3 className="mb-2 text-xl font-bold hover:text-teal-400">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4 text-gray-400 text-wrap">
+                    {project.description}
                   </p>
+                  <div className="flex gap-2 pb-2">
+                    <Badge className="flex font-bold">
+                      <ExternalLink className="" /> Live
+                    </Badge>
+                    <Badge className="flex font-bold">
+                      <FaGithub className="" /> Source
+                    </Badge>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <Badge
