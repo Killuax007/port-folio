@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
@@ -66,8 +65,6 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
     <section id="projects" className="py-20 bg-gray-950">
       <div className="container px-4 mx-auto">
@@ -110,8 +107,6 @@ export default function Projects() {
               }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              onMouseEnter={() => setHoveredId(project.id)}
-              onMouseLeave={() => setHoveredId(null)}
               className="overflow-hidden rounded-xl w-full max-w-xl  border border-gray-700"
             >
               <MagicCard
