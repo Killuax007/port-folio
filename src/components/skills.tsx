@@ -149,7 +149,7 @@ const skills = [
   {
     name: "PostgreSQL",
     icon: BiLogoPostgresql,
-    color: "text-purple-[#336791]",
+    color: "text-[#336791]",
     type: "react-icons",
   },
   {
@@ -253,6 +253,7 @@ export default function Skills() {
             ))}
           </div>
         </motion.div>
+        <div></div>
       </div>
     </section>
   );
