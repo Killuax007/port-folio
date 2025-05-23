@@ -10,7 +10,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import SessionTimer from "./session-time";
 import { FaRegFilePdf } from "react-icons/fa";
 
 export default function Navbar() {
