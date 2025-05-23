@@ -131,7 +131,6 @@ export default function Navbar() {
             </Tooltip>
           </TooltipProvider>
         </Link>
-        <SessionTimer />
       </motion.div>
     </motion.nav>
   );
