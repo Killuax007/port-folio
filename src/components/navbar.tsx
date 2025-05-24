@@ -11,6 +11,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { FaRegFilePdf } from "react-icons/fa";
+import { GrDocumentText } from "react-icons/gr";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
@@ -111,24 +112,45 @@ export default function Navbar() {
           </Link>
         ))}
         <Link
-          className="flex items-center"
+          className="flex flex-col items-center"
           href={
             "https://drive.google.com/file/d/1rLKokzItJSgfCmL9Afd4_uR0d0OUD-Nj/view?usp=sharing"
           }
         >
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
-                <FaRegFilePdf
-                  size={19}
-                  className="cursor-pointer text-gray-400 hover:text-white my-2"
-                />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Resume</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className={`flex h-10 w-10 items-center justify-center rounded-full cursor-pointer transition-colors text-gray-400 hover:text-white  `}
+          >
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <FaRegFilePdf size={20} className="cursor-pointer  " />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Resume</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </motion.div>
+        </Link>
+        <Link className="flex flex-col items-center" href={"/blogs"}>
+          <motion.div
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className={`flex h-10 w-10 items-center justify-center rounded-full cursor-pointer transition-colors text-gray-400 hover:text-white   `}
+          >
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <GrDocumentText size={20} className="cursor-pointer " />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Blogs</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </motion.div>
         </Link>
       </motion.div>
     </motion.nav>

@@ -22,6 +22,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -51,6 +52,7 @@ export default function Contact() {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           subject: "",
           message: "",
         });
@@ -207,6 +209,20 @@ export default function Contact() {
                   />
                 </motion.div>
               </div>
+              <motion.div
+                className="space-y-2"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone"
+                  required
+                  className="bg-gray-800 border-gray-700 focus:border-teal-500"
+                />
+              </motion.div>
               <motion.div
                 className="space-y-2"
                 whileHover={{ scale: 1.02 }}

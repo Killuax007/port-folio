@@ -90,11 +90,11 @@ export default function Hero() {
           <motion.div variants={item} className="my-10 overflow-hidden  p-1">
             <div className="h-32 w-32 overflow-hidden rounded-full bg-gray-800 md:h-40 md:w-40">
               <Image
-                src="https://res.cloudinary.com/dwajmx8y7/image/upload/v1743687615/images/jzb1lywnzj2n1zqnvtti.jpg"
+                src="https://res.cloudinary.com/dwajmx8y7/image/upload/v1748057041/images/ChatGPT_Image_May_24_2025_08_53_36_AM_jehagd.png"
                 alt="Profile"
                 width={100}
                 height={100}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </motion.div>
@@ -128,11 +128,12 @@ export default function Hero() {
 
           <motion.h2
             variants={item}
-            className="mb-6 text-lg font-medium text-gray-300 md:text-lg"
+            className="mb-6 text-md font-medium text-gray-300 md:text-lg"
           >
-            Every crash teaches me. Every challenge fuels the grind. I live
-            where code meets curiosity—refactoring legacy or chasing
-            bleeding-edge. I don’t just learn—I level up. Relentlessly.
+            A full-stack developer who loves turning ideas into clean,
+            functional code. Whether it’s fixing old bugs or playing with new
+            tech, I’m always leveling up. Open for freelancing—let’s build
+            something awesome!
           </motion.h2>
 
           <motion.div
