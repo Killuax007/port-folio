@@ -14,19 +14,19 @@ export default function Footer() {
   const socialIcons = [
     {
       icon: FaGithub,
-      href: "https://github.com/",
+      href: "https://github.com/Killuax007",
       label: "GitHub",
       color: "text-gray-200",
     },
     {
       icon: FaLinkedin,
-      href: "https://linkedin.com/",
+      href: "https://www.linkedin.com/in/manoj-kumar-panda-527089272",
       label: "LinkedIn",
       color: "text-blue-700",
     },
     {
       icon: FaXTwitter,
-      href: "https://twitter.com/",
+      href: "https://x.com/Killuax_007?t=mKKPELafgeTl3NalEvgBZQ&s=09",
       label: "Twitter",
       color: "text-sky-500",
     },
