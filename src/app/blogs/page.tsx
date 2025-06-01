@@ -22,16 +22,16 @@ export default function Page() {
     fetchBlogs();
   }, []);
   return (
-    <div className="flex flex-col  items-center h-screen mx-auto w-full ">
+    <div className="flex flex-col items-center h-screen mx-auto w-full ">
       <div className="md:my-10 my-5 max-w-4xl p-10 ">
         <motion.div
-          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+          initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
           whileInView={{
             opacity: 1,
             y: 0,
             filter: "blur(0px)",
             transition: {
-              duration: 0.6,
+              duration: 0.3,
               type: "spring",
               stiffness: 200,
               damping: 10,
