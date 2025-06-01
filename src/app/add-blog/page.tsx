@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
+import { Loader2 } from "lucide-react";
 // import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent, ChangeEvent } from "react";
@@ -12,6 +13,7 @@ interface Blog {
 }
 export default function Page() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [blog, setBlog] = useState<Blog>({
     title: "",
     href: "",
@@ -27,6 +29,7 @@ export default function Page() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const res = await axios.post("api/blog", {
@@ -35,6 +38,7 @@ export default function Page() {
         published: blog.published,
       });
       console.log(res);
+      setLoading(false);
       toast.success("A new Blog generated successfully");
       setBlog({
         title: "",
@@ -43,6 +47,7 @@ export default function Page() {
       });
       router.push("/blogs");
     } catch {
+      setLoading(false);
       toast.error("Failed to add New Blog");
     }
   };
@@ -86,8 +91,16 @@ export default function Page() {
           placeholder="Pick a Date"
           required
         />
-
-        <Button className="font-semibold w-full cursor-pointer">Submit</Button>
+        {loading ? (
+          <Button className="flex font-semibold w-full cursor-pointer">
+            <Loader2 className="size-3 animate-spin" />
+            Submitting..
+          </Button>
+        ) : (
+          <Button className="font-semibold w-full cursor-pointer">
+            Submit
+          </Button>
+        )}
       </form>
     </main>
   );
