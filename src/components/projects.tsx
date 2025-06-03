@@ -122,17 +122,17 @@ export default function Projects() {
                     {project.description}
                   </p>
                   <div className="flex gap-2 pb-2">
-                    <Badge asChild className="flex font-bold">
-                      <Link href={project.liveUrl}>
+                    <Link href={project.liveUrl}>
+                      <Badge className="flex font-bold">
                         <ExternalLink className="" /> Live
-                      </Link>
-                    </Badge>
-                    <Badge className="flex font-bold">
-                      {" "}
-                      <Link href={project.githubUrl}>
+                      </Badge>
+                    </Link>
+                    <Link className="flex" href={project.githubUrl}>
+                      <Badge className="flex font-bold">
+                        {" "}
                         <FaGithub className="" /> Source
-                      </Link>
-                    </Badge>
+                      </Badge>
+                    </Link>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
