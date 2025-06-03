@@ -122,14 +122,16 @@ export default function Projects() {
                     {project.description}
                   </p>
                   <div className="flex gap-2 pb-2">
-                    <Badge
-                      className="flex font-bold"
-                      onClick={() => project.liveUrl}
-                    >
-                      <ExternalLink className="" /> Live
+                    <Badge asChild className="flex font-bold">
+                      <Link href={project.liveUrl}>
+                        <ExternalLink className="" /> Live
+                      </Link>
                     </Badge>
-                    <Badge className="flex font-bold" onClick={()=>project.githubUrl}>
-                      <FaGithub className="" /> Source
+                    <Badge className="flex font-bold">
+                      {" "}
+                      <Link href={project.githubUrl}>
+                        <FaGithub className="" /> Source
+                      </Link>
                     </Badge>
                   </div>
                   <div className="flex flex-wrap gap-2">
