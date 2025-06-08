@@ -12,14 +12,14 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Medium-Clone",
+    title: "Snappy",
     description:
-      "A Medium-style web app for publishing and reading articles, featuring rich text editing, user authentication, responsive design, and seamless content management for writers.",
+      "Snappy is a sleek and minimalistic tool inspired by Ray.so, built specifically to beautify and share code snippets with style. Whether you're posting on social media, writing a blog, or showcasing your work. ",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746723818/images/rdc8pkkwoicslslxjasi.png",
-    tags: ["React", "Tailwind CSS", "Node Js", "PostgreSQL", "Prisma"],
-    liveUrl: "https://medium-clone-sigma-five.vercel.app/",
-    githubUrl: "https://github.com/Killuax007/Medium-clone",
+    tags: ["React", "Tailwind CSS", "Zustand", "ShadcnUI", "React-hot-toast"],
+    liveUrl: "https://snappy-one.vercel.app/",
+    githubUrl: "https://github.com/Killuax007/Snappy",
   },
   {
     id: 3,

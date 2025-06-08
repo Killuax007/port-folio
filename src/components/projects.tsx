@@ -37,7 +37,7 @@ export default function Projects() {
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500" />
         </motion.div>
 
-        <div className=" flex flex-col items-center justify-center cursor-pointer   gap-8 ">
+        <div className=" flex flex-col items-center justify-center flex-wrap cursor-pointer  gap-4 ">
           {projects &&
             projects.map((project) => (
               <motion.div
