@@ -48,15 +48,15 @@ export default function Page() {
           }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="overflow-hidden rounded-xl w-full max-w-4xl  "
+          className=" rounded-xl w-full max-w-4xl  "
         >
-          <div className="space-y-4 rounded-lg">
-            {!blogs && (
-              <span className="flex justify-center items-center ">
-                <Loader2 className="size-8 animate-spin" />
-              </span>
-            )}
+          {!blogs && (
+            <span className="flex justify-center items-center ">
+              <Loader2 className="size-8 animate-spin" />
+            </span>
+          )}
 
+          <div className="space-y-4 h-[65vh] p-5 overflow-y-auto rounded-lg">
             {blogs &&
               blogs.map((blog, idx) => {
                 return (
