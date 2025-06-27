@@ -3,15 +3,17 @@ import { motion } from "motion/react";
 import { MagicCard } from "@/components/magicui/magic-card";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { IoHomeOutline } from "react-icons/io5";
+import { IoIosArrowBack } from "react-icons/io";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
 interface Blog {
   title: string;
   href: string;
   published: string;
 }
 export default function Page() {
+  const router = useRouter();
   const [blogs, setBlogs] = useState<Blog[]>();
   useEffect(() => {
     async function fetchBlogs() {
@@ -22,8 +24,15 @@ export default function Page() {
     fetchBlogs();
   }, []);
   return (
-    <div className="flex flex-col items-center h-screen mx-auto w-full ">
-      <div className="md:my-10 my-5 max-w-4xl p-10 ">
+    <div className="flex flex-col  h-screen">
+      <div className="md:my-10 my-5 max-w-4xl p-10 w-full mx-auto ">
+        <div
+          className="my-5 md:my-10 flex items-center cursor-pointer"
+          onClick={() => router.back()}
+        >
+          <IoIosArrowBack className="size-4 mr-[2px] text-green-400/80 " />
+          <span className="font-medium ">Back</span>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
           whileInView={{
@@ -41,12 +50,6 @@ export default function Page() {
           transition={{ duration: 0.6 }}
           className="overflow-hidden rounded-xl w-full max-w-4xl  "
         >
-          <div className="my-5 md:my-10 flex justify-between items-center ">
-            <h2 className="text-3xl font-semibold ">Blogs</h2>
-            <Link href={"/"}>
-              <IoHomeOutline className="size-5 text-neutral-600 hover:text-neutral-200 transition-all duration-200 hover:scale-110" />
-            </Link>
-          </div>
           <div className="space-y-4 rounded-lg">
             {!blogs && (
               <span className="flex justify-center items-center ">
