@@ -56,10 +56,13 @@ export default function Contact() {
           subject: "",
           message: "",
         });
+      } else {
+        toast.error("Failed to sent ❌ ", {
+          description: "Something went wrong",
+        });
       }
     } catch (error) {
       console.log(error);
-      toast.error("Failed to sent ");
     } finally {
       setIsSubmitting(false);
     }

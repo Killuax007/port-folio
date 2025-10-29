@@ -36,29 +36,29 @@ export async function POST(req: Request) {
         padding: 3px 6px;
       "
     >
-      <p style="font-size: 35px; font-weight: 600; color: #0a0a0a">
+      <h1 style="font-size: 55px; font-weight: 600; color: #0a0a0a">
         Greetings Developer
-      </p>
-      <p style="font-size: 24px; font-weight: 300; color: #0a0a0a">
+      </h1>
+      <h3 style="font-size: 45px; font-weight: 300; color: #0a0a0a">
         My Self ${name}
-      </p>
+      </h3>
       <h2
         style="
           width: max-content;
           padding: 0 10px;
           color: #0a0a0a;
-          font-size: 20px;
+          font-size: 40px;
         "
       >
         ${message}
       </h2>
 
-      <p style="font-size: 20px; color: #0a0a0a">
+      <p style="font-size: 35px; color: #0a0a0a">
         Hope i can get back from you ASAP :)
       </p>
-      <p style="font-size: 16px; color: #0a0a0a">Regards, ${name}</p>
-      <p style="font-size: 16px; color: #0a0a0a">Email : ${email}</p>
-      <p style="font-size: 16px; color: #0a0a0a">Phone : ${phone}</p>
+      <p style="font-size: 35px; color: #0a0a0a">Regards, <br/> ${name}</p>
+      <p style="font-size: 35px; color: #0a0a0a">Email : ${email}</p>
+      <p style="font-size: 35px; color: #0a0a0a">Phone : ${phone}</p>
       <hr style="border: none; border-top: 1px solid #1f2937" />
     </div>
   </body>

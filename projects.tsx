@@ -1,6 +1,17 @@
 export const projects = [
   {
     id: 1,
+    title: "Framer Designs",
+    description:
+      "Explore Framer-Motion design library- a showcase of smooth production-ready motion effects styled with Tailwind CSS Built for developer and designers who value aesthetics and performance.",
+    image:
+      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746674812/images/ai7cy5o7ie14kb75exm7.png",
+    tags: ["ReactJS", "Tailwind CSS", "Framer"],
+    liveUrl: "https://framer-showcase.vercel.app/",
+    githubUrl: "#",
+  },
+  {
+    id: 1,
     title: "Whisperly",
     description:
       "Whisperly is an anonymous social messaging app built with Next.js, enabling users to exchange AI-generated messages securely, fostering curiosity, fun, and open interaction.",
