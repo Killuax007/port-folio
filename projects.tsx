@@ -52,13 +52,13 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Employee-Management",
+    title: "Journal-Application",
     description:
-      "A simple Spring Boot web application to manage employee records with CRUD operations, RESTful APIs, and integrated database support for efficient data handling.",
+      "A secure, full-stack journaling app built with Spring Boot, React, and JWT Authentication. Users can create, view, update, and delete their personal journal entries, all protected via token-based routing and seamless authentication.",
     image:
       "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746759012/images/fgxwiifzoilctbqzlqsb.png",
-    tags: ["React", "Tailwindcss", "Spring-Boot", "MongoDB"],
+    tags: ["React", "Tailwindcss", "Spring-Boot","Spring-security","jwt", "MongoDB"],
     liveUrl: "#",
-    githubUrl: "https://github.com/Killuax007/Employee-Management-",
+    githubUrl: "https://github.com/Killuax007/Journal-Application",
   },
 ];
