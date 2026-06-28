@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { MagicCard } from "./magicui/magic-card";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
+import { experience } from "../../experiences";
 export default function About() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -55,16 +56,17 @@ export default function About() {
             className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
           />
           <motion.p variants={fadeInUp} className="text-gray-200">
-            I’m a dedicated developer with a strong focus on building responsive
-            websites and scalable backend systems. I’ve completed a Java
-            internship at{" "}
-            <Link href={"https://tutormentor.co.in/index.php"}>
-              {" "}
-              <span className="font-semibold">@Tutor Mentor</span>
-            </Link>{" "}
-            , where I deepened my backend skills. I don’t claim to be a
-            perfectionist—but I’m driven by the desire to improve constantly and
-            deliver high-quality, reliable solutions that make a real impact.
+            I&apos;m a Data Engineer with 2 years of experience designing
+            healthcare data platforms and ETL pipelines using Azure Databricks,
+            PySpark, Delta Lake, SQL, and Azure Data Factory. My work focuses on
+            building scalable ingestion pipelines, improving data quality,
+            optimizing Spark workloads, and delivering analytics-ready datasets.
+          </motion.p>
+
+          <motion.p variants={fadeInUp} className="text-gray-200">
+            Outside of work, I enjoy building production-style data engineering
+            projects, exploring distributed systems, and continuously learning
+            new cloud and big data technologies.
           </motion.p>
         </motion.div>
 
@@ -73,7 +75,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col justify-center w-full max-w-xl mx-auto"
+          className="flex flex-col justify-center w-full max-w-xl lg:max-w-2xl mx-auto"
         >
           <motion.div variants={fadeInUp} className="mb-8">
             <motion.h2
@@ -138,43 +140,65 @@ export default function About() {
               className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
             />
             <div className="">
-              <MagicCard className=" rounded-2xl " gradientSize={100}>
-                <div className="flex p-2 ">
-                  <Image
-                    width={100}
-                    height={100}
-                    className="rounded-full size-15 object-cover"
-                    alt="college"
-                    src={
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbvFllKcHXrPabeN6zxiK0JmMZEGZRk206bw&s"
-                    }
-                  />
-                  <div className="w-full flex justify-between mx-2 ">
-                    <div className="items-center my-2  md:my-0">
-                      <motion.h2
-                        variants={fadeInUp}
-                        className="text-[14px] md:text-xl"
-                      >
-                        Tutor Mentor
-                      </motion.h2>
-                      <motion.p
-                        variants={fadeInUp}
-                        className="text-gray-400 text-[13px]"
-                      >
-                        Java Developer Intern
-                      </motion.p>
+              {experience &&
+                experience.map((exp) => (
+                  <MagicCard
+                    className=" rounded-2xl "
+                    gradientSize={100}
+                    key={exp.id}
+                  >
+                    <div className="flex p-2 ">
+                      <Image
+                        width={100}
+                        height={100}
+                        className="rounded-full size-15 object-cover"
+                        alt="college"
+                        src={exp.logo}
+                      />
+                      <div className="w-full flex justify-between mx-2 ">
+                        <div className="items-center my-2  md:my-0">
+                          <motion.h2
+                            variants={fadeInUp}
+                            className="text-[14px] md:text-xl"
+                          >
+                            {exp.company_name}
+                          </motion.h2>
+                          <motion.p
+                            variants={fadeInUp}
+                            className="text-gray-400 text-[13px]"
+                          >
+                            {exp.project_name}
+                          </motion.p>
+                        </div>
+                        <div>
+                          <motion.p
+                            variants={fadeInUp}
+                            className="text-white  text-[10px] md:text-[13px]  font-mono  my-1 md:my-1"
+                          >
+                            {exp.serve_date}
+                          </motion.p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <motion.p
-                        variants={fadeInUp}
-                        className="text-white  text-[10px] md:text-sm  font-mono  my-2 md:my-1"
-                      >
-                        Sep 2024 - Present
-                      </motion.p>
+                    <div className="mx-2 my-1 ">
+                      {exp.description?.map((desc, i) => (
+                        <motion.div
+                          key={i}
+                          variants={fadeInUp}
+                          className="flex gap-4"
+                        >
+                          <div className="pt-[5px]">
+                            <span className="block h-2 w-2 rounded-full bg-emerald-500" />
+                          </div>
+
+                          <p className="text-gray-300 leading-6 text-[12px]">
+                            {desc}
+                          </p>
+                        </motion.div>
+                      ))}
                     </div>
-                  </div>
-                </div>
-              </MagicCard>
+                  </MagicCard>
+                ))}
             </div>
           </motion.div>
         </motion.div>

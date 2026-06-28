@@ -29,7 +29,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -131,12 +131,13 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500" />
           <p className="text-gray-400">
-            Have a project in mind or want to chat? Feel free to reach out!
+            Whether it&apos;s building scalable data platforms, discussing
+            distributed systems, collaborating on open-source projects, or
+            exploring new opportunities, I&apos;d love to connect.{" "}
           </p>
           <p className="text-gray-400">
-            Excited to collaborate and take on new oppurtunities ! Whether youre
-            looking for a freelancer or full-time work im just a message away
-            You got response quickly :)
+            I&apos;m always open to conversations about Data Engineering, Cloud
+            Technologies, Backend Development, and Software Engineering.
           </p>
         </motion.div>
         <AuroraText className="flex justify-center w-full my-4 text-center text-2xl">

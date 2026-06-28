@@ -2,10 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Globe, GitBranch } from "lucide-react";
-import { SiShadcnui } from "react-icons/si";
 
 import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
-import { FaCloudflare } from "react-icons/fa";
 import { RiGeminiFill } from "react-icons/ri";
 
 import {
@@ -17,19 +15,17 @@ import {
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa6";
 import { FaJava } from "react-icons/fa";
-import { FiFramer } from "react-icons/fi";
 import { SiDjango } from "react-icons/si";
-import { SiSpringboot } from "react-icons/si";
-import { SiRedux } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { SiPrisma } from "react-icons/si";
-import { BsBootstrapFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { Badge } from "./ui/badge";
-import { IoLogoFirebase } from "react-icons/io5";
-import { RiSupabaseFill } from "react-icons/ri";
 import { FcLinux } from "react-icons/fc";
+import { VscAzure } from "react-icons/vsc";
+import { SiDatabricks } from "react-icons/si";
+import { LuFactory } from "react-icons/lu";
+import { FaDatabase } from "react-icons/fa";
+import { GrOracle } from "react-icons/gr";
 
 const skills = [
   { name: "Java", icon: FaJava, color: "text-rose-500", type: "react-icons" },
@@ -40,12 +36,7 @@ const skills = [
     type: "react-icons",
   },
   { name: "HTML/CSS", icon: Globe, color: "text-red-800", type: "lucide" },
-  {
-    name: "Bootstrap",
-    icon: BsBootstrapFill,
-    color: "text-purple-900",
-    type: "lucide",
-  },
+  ,
   {
     name: "JavaScript",
     icon: IoLogoJavascript,
@@ -65,12 +56,7 @@ const skills = [
     color: "text-blue-600 ",
     type: "react-icons",
   },
-  {
-    name: "Redux",
-    icon: SiRedux,
-    color: "text-purple-600",
-    type: "react-icons",
-  },
+
   {
     name: "Next.js",
     icon: SiNextdotjs,
@@ -84,18 +70,7 @@ const skills = [
     color: "text-cyan-400",
     type: "react-icons",
   },
-  {
-    name: "Shadcn Ui",
-    icon: SiShadcnui,
-    color: "text-black",
-    type: "react-icons",
-  },
-  {
-    name: "Framer-Motion",
-    icon: FiFramer,
-    color: "text-black",
-    type: "react-icons",
-  },
+  ,
   {
     name: "Node.js",
     icon: FaNodeJs,
@@ -108,12 +83,7 @@ const skills = [
     color: "text-green-700",
     type: "react-icons",
   },
-  {
-    name: "Spring-Boot",
-    icon: SiSpringboot,
-    color: "text-green-600",
-    type: "react-icons",
-  },
+
   { name: "Git", icon: GitBranch, color: "text-orange-500", type: "lucide" },
   { name: "Github", icon: FaGithub, color: "text-black", type: "lucide" },
   {
@@ -122,22 +92,23 @@ const skills = [
     color: "text-purple-400",
     type: "lucide",
   },
-  {
-    name: "Firebase",
-    icon: IoLogoFirebase,
-    color: "text-orange-500",
-    type: "lucide",
-  },
-  {
-    name: "Supabase",
-    icon: RiSupabaseFill,
-    color: "text-green-500",
-    type: "lucide",
-  },
+  ,
   {
     name: "MySQL",
     icon: SiMysql,
     color: "text-black",
+    type: "react-icons",
+  },
+  {
+    name: "Oracle",
+    icon: GrOracle,
+    color: "text-red-500",
+    type: "react-icons",
+  },
+  {
+    name: "PL/SQL",
+    icon: FaDatabase,
+    color: "text-blue-700",
     type: "react-icons",
   },
   {
@@ -153,25 +124,32 @@ const skills = [
     type: "react-icons",
   },
   {
-    name: "Prisma",
-    icon: SiPrisma,
-    color: "text-black",
-    type: "react-icons",
-  },
-  {
     name: "Docker",
     icon: FaDocker,
     color: "text-blue-400",
     type: "react-icons",
   },
   { name: "AWS", icon: FaAws, color: "text-black", type: "react-icons" },
+  ,
   {
-    name: "Cloudflare",
-    icon: FaCloudflare,
-    color: "text-orange-500",
+    name: "AZURE",
+    icon: VscAzure,
+    color: "text-blue-500",
+    type: "react-icons",
+  },
+  {
+    name: "DataBricks",
+    icon: SiDatabricks,
+    color: "text-red-500",
     type: "react-icons",
   },
   { name: "Linux", icon: FcLinux, color: "text-black", type: "react-icons" },
+  {
+    name: "Data Factory",
+    icon: LuFactory,
+    color: "text-blue-500",
+    type: "react-icons",
+  },
 ];
 
 export default function Skills() {
@@ -214,8 +192,11 @@ export default function Skills() {
           </h2>
           <div className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500" />
           <p className="text-gray-400">
-            I&apos;ve worked with a variety of technologies in the web
-            development world. Here are my main areas of expertise:
+            I enjoy working across the entire data engineering lifecycle—from
+            ingesting raw data to building reliable pipelines and delivering
+            analytics-ready datasets. Alongside data engineering, I continue
+            building software projects to strengthen my backend engineering and
+            system design skills.
           </p>
         </motion.div>
 
@@ -227,7 +208,7 @@ export default function Skills() {
           className="w-2/3 mx-auto max-lg:w-full max-sm:w-full flex flex-col items-center mt-4 pb-8"
         >
           <div className="flex justify-center items-center w-full flex-col max-lg:flex-row max-sm:flex-row gap-3 max-sm:gap-2 lg:flex-row mt-4 px-40 max-[1200px]:px-24 max-lg:px-28 max-sm:px-6 flex-wrap  max-sm:ml-">
-            {skills.map((skill, index) => (
+            {skills?.map((skill, index) => (
               <motion.div
                 key={index}
                 variants={item}
@@ -242,8 +223,8 @@ export default function Skills() {
                 className="flex items-center rounded-lg text-center border  hover:border-amber-500 transition-all  duration-100 cursor-pointer"
               >
                 <Badge variant={"default"} className="flex font-bold">
-                  {skill.name}
-                  {skill.type === "lucide" ? (
+                  {skill?.name}
+                  {skill?.type === "lucide" ? (
                     <skill.icon className={`w-8 h-8 ${skill.color} `} />
                   ) : (
                     <skill.icon className={`w-8 h-8 ${skill.color}`} />

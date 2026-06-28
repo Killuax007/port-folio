@@ -125,15 +125,22 @@ export default function Hero() {
               ))}
             </div>
           </motion.div>
+          <motion.h2
+            variants={item}
+            className="mb-2 text-xl font-bold text-gray-300 md:text-2xl"
+          >
+            Data <span className="text-teal-400">Engineer</span>
+          </motion.h2>
 
           <motion.h2
             variants={item}
             className="mb-6 text-md font-medium text-gray-300 md:text-lg"
           >
-            A full-stack developer who loves turning ideas into clean,
-            functional code. Whether it’s fixing old bugs or playing with new
-            tech, I’m always leveling up. Open for freelancing—let’s build
-            something awesome!
+            I build scalable data pipelines, cloud-based ETL platforms, and
+            backend applications that transform raw data into reliable business
+            insights. With experience in Azure Databricks, PySpark, and modern
+            software development, I enjoy building production-ready solutions
+            that solve real-world problems.
           </motion.h2>
 
           <motion.div
