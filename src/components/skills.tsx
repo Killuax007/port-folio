@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import { Globe, GitBranch } from "lucide-react";
 
 import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
@@ -23,10 +24,10 @@ import { Badge } from "./ui/badge";
 import { FcLinux } from "react-icons/fc";
 import { VscAzure } from "react-icons/vsc";
 import { SiDatabricks } from "react-icons/si";
-import { LuFactory } from "react-icons/lu";
 import { FaDatabase } from "react-icons/fa";
 import { GrOracle } from "react-icons/gr";
-
+import { SiPandas } from "react-icons/si";
+import { SiNumpy } from "react-icons/si";
 const skills = [
   { name: "Java", icon: FaJava, color: "text-rose-500", type: "react-icons" },
   {
@@ -81,7 +82,18 @@ const skills = [
     color: "text-green-700",
     type: "react-icons",
   },
-
+  {
+    name: "Pandas",
+    icon: SiPandas,
+    color: "text-blue-700",
+    type: "react-icons",
+  },
+  {
+    name: "Numpy",
+    icon: SiNumpy,
+    color: "text-sky-400",
+    type: "react-icons",
+  },
   { name: "Git", icon: GitBranch, color: "text-orange-500", type: "lucide" },
   { name: "Github", icon: FaGithub, color: "text-black", type: "lucide" },
   {
@@ -128,7 +140,7 @@ const skills = [
   },
   { name: "AWS", icon: FaAws, color: "text-black", type: "react-icons" },
   {
-    name: "AZURE",
+    name: "Azure",
     icon: VscAzure,
     color: "text-blue-500",
     type: "react-icons",
@@ -140,12 +152,6 @@ const skills = [
     type: "react-icons",
   },
   { name: "Linux", icon: FcLinux, color: "text-black", type: "react-icons" },
-  {
-    name: "Data Factory",
-    icon: LuFactory,
-    color: "text-blue-500",
-    type: "react-icons",
-  },
 ];
 
 export default function Skills() {

@@ -5,6 +5,7 @@ import { MagicCard } from "./magicui/magic-card";
 import Image from "next/image";
 // import Link from "next/link";
 import { experience } from "../../experiences";
+// import Link from "next/link";
 export default function About() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -139,6 +140,7 @@ export default function About() {
               variants={fadeInUp}
               className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
             />
+
             <div className="">
               {experience &&
                 experience.map((exp) => (
@@ -180,15 +182,16 @@ export default function About() {
                         </div>
                       </div>
                     </div>
+
                     <div className="mx-2 my-1 ">
                       {exp.description?.map((desc, i) => (
                         <motion.div
                           key={i}
                           variants={fadeInUp}
-                          className="flex gap-4"
+                          className="flex gap-2"
                         >
-                          <div className="pt-[5px]">
-                            <span className="block h-2 w-2 rounded-full bg-emerald-500" />
+                          <div className="pt-[7px]">
+                            <span className="block h-2 w-2 rounded-full bg-teal-500" />
                           </div>
 
                           <p className="text-gray-300 leading-6 text-[12px]">

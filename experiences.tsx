@@ -1,6 +1,7 @@
 export const experience = [
   {
     id: 1,
+    short: "xenops",
     company_name: "Xenops Technology Private Ltd.",
     project_name:
       "Migration of Healthcare Data Ingestion Platform from Oracle to Azure Databricks",

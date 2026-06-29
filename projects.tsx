@@ -1,17 +1,6 @@
 export const projects = [
   {
     id: 1,
-    title: "Framer Designs",
-    description:
-      "Explore Framer-Motion design library- a showcase of smooth production-ready motion effects styled with Tailwind CSS Built for developer and designers who value aesthetics and performance.",
-    image:
-      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746674812/images/ai7cy5o7ie14kb75exm7.png",
-    tags: ["ReactJS", "Tailwind CSS", "Framer"],
-    liveUrl: "https://framer-showcase.vercel.app/",
-    githubUrl: "#",
-  },
-  {
-    id: 1,
     title: "Whisperly",
     description:
       "Whisperly is an anonymous social messaging app built with Next.js, enabling users to exchange AI-generated messages securely, fostering curiosity, fun, and open interaction.",
@@ -49,16 +38,5 @@ export const projects = [
     ],
     liveUrl: "https://github.com/Killuax007/Urban-Bites",
     githubUrl: "https://github.com/Killuax007/Urban-Bites",
-  },
-  {
-    id: 4,
-    title: "Journal-Application",
-    description:
-      "A secure, full-stack journaling app built with Spring Boot, React, and JWT Authentication. Users can create, view, update, and delete their personal journal entries, all protected via token-based routing and seamless authentication.",
-    image:
-      "https://res.cloudinary.com/dwajmx8y7/image/upload/v1746759012/images/fgxwiifzoilctbqzlqsb.png",
-    tags: ["React", "Tailwindcss", "Spring-Boot","Spring-security","jwt", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/Killuax007/Journal-Application",
   },
 ];

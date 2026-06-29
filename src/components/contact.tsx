@@ -86,7 +86,7 @@ export default function Contact() {
     { icon: FaGithub, url: "https://github.com/Killuax007", label: "GitHub" },
     {
       icon: FaLinkedin,
-      url: "https://www.linkedin.com/in/manoj-kumar-panda-527089272",
+      url: "https://www.linkedin.com/in/manoj-kumar-panda-862b83395",
       label: "LinkedIn",
       color: "text-[#0077b5]",
     },
