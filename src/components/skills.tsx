@@ -36,7 +36,6 @@ const skills = [
     type: "react-icons",
   },
   { name: "HTML/CSS", icon: Globe, color: "text-red-800", type: "lucide" },
-  ,
   {
     name: "JavaScript",
     icon: IoLogoJavascript,
@@ -70,7 +69,6 @@ const skills = [
     color: "text-cyan-400",
     type: "react-icons",
   },
-  ,
   {
     name: "Node.js",
     icon: FaNodeJs,
@@ -92,7 +90,6 @@ const skills = [
     color: "text-purple-400",
     type: "lucide",
   },
-  ,
   {
     name: "MySQL",
     icon: SiMysql,
@@ -130,7 +127,6 @@ const skills = [
     type: "react-icons",
   },
   { name: "AWS", icon: FaAws, color: "text-black", type: "react-icons" },
-  ,
   {
     name: "AZURE",
     icon: VscAzure,
@@ -208,30 +204,31 @@ export default function Skills() {
           className="w-2/3 mx-auto max-lg:w-full max-sm:w-full flex flex-col items-center mt-4 pb-8"
         >
           <div className="flex justify-center items-center w-full flex-col max-lg:flex-row max-sm:flex-row gap-3 max-sm:gap-2 lg:flex-row mt-4 px-40 max-[1200px]:px-24 max-lg:px-28 max-sm:px-6 flex-wrap  max-sm:ml-">
-            {skills?.map((skill, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{
-                  y: -5,
-                  transition: {
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 10,
-                  },
-                }}
-                className="flex items-center rounded-lg text-center border  hover:border-amber-500 transition-all  duration-100 cursor-pointer"
-              >
-                <Badge variant={"default"} className="flex font-bold">
-                  {skill?.name}
-                  {skill?.type === "lucide" ? (
-                    <skill.icon className={`w-8 h-8 ${skill.color} `} />
-                  ) : (
-                    <skill.icon className={`w-8 h-8 ${skill.color}`} />
-                  )}
-                </Badge>
-              </motion.div>
-            ))}
+            {skills &&
+              skills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  variants={item}
+                  whileHover={{
+                    y: -5,
+                    transition: {
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 10,
+                    },
+                  }}
+                  className="flex items-center rounded-lg text-center border  hover:border-amber-500 transition-all  duration-100 cursor-pointer"
+                >
+                  <Badge variant={"default"} className="flex font-bold">
+                    {skill.name}
+                    {skill.type === "lucide" ? (
+                      <skill.icon className={`w-8 h-8 ${skill.color} `} />
+                    ) : (
+                      <skill.icon className={`w-8 h-8 ${skill.color}`} />
+                    )}
+                  </Badge>
+                </motion.div>
+              ))}
           </div>
         </motion.div>
         <div></div>
