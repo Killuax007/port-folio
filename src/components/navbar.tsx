@@ -114,7 +114,7 @@ export default function Navbar() {
         <Link
           className="flex flex-col items-center"
           href={
-            "https://drive.google.com/file/d/1BdIsd3SPHHHULRjpp10aJj2iVB2ypn5Z/view?usp=drive_link"
+            "https://drive.google.com/file/d/1pg2X7oYQYkCjmC0xK5QJf8q3xH6My-eq/view?usp=drive_link"
           }
         >
           <motion.div
