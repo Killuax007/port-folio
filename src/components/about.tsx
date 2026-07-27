@@ -57,7 +57,7 @@ export default function About() {
             className="w-20 h-1 mx-auto mb-6 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-2xl"
           />
           <motion.p variants={fadeInUp} className="text-gray-200">
-            I&apos;m a Data Engineer with 2 years of experience designing
+            I&apos;m a Data Engineer with 3 years of experience designing
             healthcare data platforms and ETL pipelines using Azure Databricks,
             PySpark, Delta Lake, SQL, and Azure Data Factory. My work focuses on
             building scalable ingestion pipelines, improving data quality,

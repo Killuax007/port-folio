@@ -5,7 +5,7 @@ export const experience = [
     company_name: "Xenops Technology Private Ltd.",
     project_name:
       "Migration of Healthcare Data Ingestion Platform from Oracle to Azure Databricks",
-    serve_date: "June 2024 - Present",
+    serve_date: "June 2023 - Present",
     logo: "https://www.x-bit.net/images/logo/favicon.png",
     description: [
       "Designed and implemented scalable ETL pipelines using Azure Databricks, PySpark, Spark SQL, and Delta Lake to process healthcare datasets including patient registrations, claims, laboratory reports, and billing data.",
